@@ -10,5 +10,10 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
+<a href="Usuario">Usuario Manager</a>
+<br />
+<br />
+<a href="Restaurante">Restaurante Manager</a>
 </body>
 </html>

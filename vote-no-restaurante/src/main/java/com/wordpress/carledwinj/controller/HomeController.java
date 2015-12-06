@@ -1,4 +1,4 @@
-package com.wordpress.carledwinj;
+package com.wordpress.carledwinj.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
