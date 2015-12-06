@@ -77,9 +77,13 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(value = "/finalizarVotacao", method = RequestMethod.POST)
-	public ModelAndView finalizar(@ModelAttribute("usuario") Usuario usuario, BindingResult result) {
+	public String finalizar(@ModelAttribute("usuario") Usuario usuario, Model model, BindingResult result) {
 		usuario.setVotou(true);
 		usuario = usuarioRepository.save(usuario);
-		return new ModelAndView("ranking", "command", usuario);
+		Iterable<Restaurante> todosRestaurantes = restauranteRepository.findAll();
+		model.addAttribute("titulo","Ranking");
+		model.addAttribute("todosRestaurantes", todosRestaurantes);
+		model.addAttribute("usuario", usuario);
+		return "ranking";
 	}
 }
