@@ -30,7 +30,12 @@ public class UsuarioController {
 		Restaurante restaurante2 = new Restaurante();
 		Restaurante restaurante3 = new Restaurante();
 		Restaurante restaurante5 = new Restaurante();
-			
+		
+		restaurante4 =  restauranteRepository.findOne(4L);//mock
+		restaurante4.setSelecionado(true);//mock
+		restaurante1 =  restauranteRepository.findOne(1L);//mock
+		restaurante1.setSelecionado(false);//mock
+		
 		restaurante2 = restauranteRepository.findOne(2L);
 		restaurante3 = restauranteRepository.findOne(3L);
 		restaurante5 = restauranteRepository.findOne(5L);
@@ -43,7 +48,7 @@ public class UsuarioController {
 			model.addAttribute("restaurante5", restaurante5);
 		}else{
 			usuario.setRestaurantePreferido(restaurante4.getId());
-			model.addAttribute("restauranteNaoSelecionado", restaurante1);
+			model.addAttribute("restauranteNaoSelecionado", restaurante1);//mock
 			model.addAttribute("restaurante2", restaurante2);
 			model.addAttribute("restaurante3", restaurante3);
 			model.addAttribute("restaurante5", restaurante5);

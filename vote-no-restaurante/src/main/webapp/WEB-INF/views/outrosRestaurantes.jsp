@@ -38,8 +38,8 @@
 					</td>
 					
 					<td align="center">
-						<img src="${path}/resources/imgs/${restaurante4.logo}" height="200" width="250" class="img-thumbnail">
-						<input type="radio"	name="restaurante" value="${restaurante4.selecionado}" />
+						<img src="${path}/resources/imgs/${restaurante2.logo}" height="200" width="250" class="img-thumbnail">
+						<input type="radio"	name="restaurante" value="${restaurante2.selecionado}" />
 						
 						<img src="${path}/resources/imgs/${restaurante5.logo}" height="200" width="250" class="img-thumbnail"/> 
 						<input type="radio"	name="restaurante" value="${restaurante5.selecionado}"> 
