@@ -13,11 +13,6 @@
 
 <link href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />" rel="stylesheet"  type="text/css" />
 <link href="<c:url value="/resources/bootstrap/css/bootstrap-theme.min.css" />" rel="stylesheet"  type="text/css" />	
-<!-- 
-<style type="text/css">
- @IMPORT url("${path}/static/bootstrap/css/bootstrap.min.css");
-@IMPORT url("${path}/static/bootstrap/css/bootstrap-theme.min.css"); 
-</style> -->
 </head>
 <body>
 <section class="container">
