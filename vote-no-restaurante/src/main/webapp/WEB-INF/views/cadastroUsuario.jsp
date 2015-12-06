@@ -27,22 +27,22 @@
 				class="table table-hover table-condensed table-striped table-bordered">
 				<tr>
 					<td><form:label path="id">Código: </form:label></td>
-					<td><form:input path="id" /></td>
+					<td><form:input path="id" class="form-control" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="nome">Nome: </form:label></td>
-					<td><form:input path="nome" /></td>
+					<td><form:input path="nome" class="form-control" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="email">Email: </form:label></td>
-					<td><form:input path="email" /></td>
+					<td><form:input path="email" class="form-control" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="restaurantePreferido">Restaurante Preferido: </form:label></td>
-					<td><form:input path="restaurantePreferido" /></td>
+					<td><form:input path="restaurantePreferido" class="form-control" /></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center">
+					<td colspan="2" align="right">
 						<button type="submit" class="btn btn-primary">Enviar</button>
 					</td>
 				</tr>
