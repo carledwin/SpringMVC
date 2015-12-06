@@ -3,29 +3,23 @@ package com.wordpress.carledwinj.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	
 	private String nome;
-	
 	private String email;
-	
-	@NotNull
-	private Long restaurantePreferido;
+	@OneToOne
+	private Restaurante restaurantePreferido;
+	@OneToOne
+	private Restaurante outroRestaurante;
 	
 	private boolean votou;
-	
-	private Long pontos;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -58,20 +52,20 @@ public class Usuario {
 		this.votou = votou;
 	}
 
-	public Long getPontos() {
-		return pontos;
-	}
-
-	public void setPontos(Long pontos) {
-		this.pontos = pontos;
-	}
-
-	public Long getRestaurantePreferido() {
+	public Restaurante getRestaurantePreferido() {
 		return restaurantePreferido;
 	}
 
-	public void setRestaurantePreferido(Long restaurantePreferido) {
+	public void setRestaurantePreferido(Restaurante restaurantePreferido) {
 		this.restaurantePreferido = restaurantePreferido;
+	}
+
+	public Restaurante getOutroRestaurante() {
+		return outroRestaurante;
+	}
+
+	public void setOutroRestaurante(Restaurante outroRestaurante) {
+		this.outroRestaurante = outroRestaurante;
 	}
 
 	@Override
@@ -81,7 +75,7 @@ public class Usuario {
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((pontos == null) ? 0 : pontos.hashCode());
+		result = prime * result + ((outroRestaurante == null) ? 0 : outroRestaurante.hashCode());
 		result = prime * result + ((restaurantePreferido == null) ? 0 : restaurantePreferido.hashCode());
 		result = prime * result + (votou ? 1231 : 1237);
 		return result;
@@ -111,10 +105,10 @@ public class Usuario {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
-		if (pontos == null) {
-			if (other.pontos != null)
+		if (outroRestaurante == null) {
+			if (other.outroRestaurante != null)
 				return false;
-		} else if (!pontos.equals(other.pontos))
+		} else if (!outroRestaurante.equals(other.outroRestaurante))
 			return false;
 		if (restaurantePreferido == null) {
 			if (other.restaurantePreferido != null)
@@ -125,6 +119,4 @@ public class Usuario {
 			return false;
 		return true;
 	}
-
-
 }

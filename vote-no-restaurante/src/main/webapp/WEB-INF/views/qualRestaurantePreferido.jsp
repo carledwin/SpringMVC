@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Qual Seu Restaurante Preferido</title>
+<title>Qual restaurante você mais gosta?</title>
 
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 
@@ -21,8 +21,8 @@
 </head>
 <body>
 	<section class="container">
-		<h1>Qual é o seu restaurante preferido</h1>
-		<form:form action="usuario" method="POST">
+		<h1>Qual é o seu restaurante preferido?</h1>
+		<form:form action="" method="POST">
 			<table
 				class="table table-hover table-condensed table-striped table-bordered">
 				<tr>

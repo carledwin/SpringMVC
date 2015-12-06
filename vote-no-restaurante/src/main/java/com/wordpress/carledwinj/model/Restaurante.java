@@ -1,11 +1,8 @@
 package com.wordpress.carledwinj.model;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -16,25 +13,22 @@ public class Restaurante {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
 	@NotNull
 	@NotEmpty
 	private String nome;
-	
 	private Long score;
-	
-	@ManyToMany
-	private Set<Usuario> usuarios;
-	
-	
-	public Restaurante() {}
-	
-	public Restaurante(Long id, String nome, Long score) {
+	private String logo;
+
+	public Restaurante() {
+	}
+
+	public Restaurante(Long id, String nome, Long score, String logo) {
 		this.id = id;
 		this.nome = nome;
 		this.score = score;
+		this.logo = logo;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -59,11 +53,20 @@ public class Restaurante {
 		this.score = score;
 	}
 
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((logo == null) ? 0 : logo.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((score == null) ? 0 : score.hashCode());
 		return result;
@@ -83,6 +86,11 @@ public class Restaurante {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (logo == null) {
+			if (other.logo != null)
+				return false;
+		} else if (!logo.equals(other.logo))
+			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
@@ -95,6 +103,4 @@ public class Restaurante {
 			return false;
 		return true;
 	}
-
-	
 }
