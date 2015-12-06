@@ -25,7 +25,7 @@
 		<h1>Qual outro restaurante que você também gosta?</h1>
 		<br />
 		<br />
-		<form:form action="outros" method="POST">
+		<form:form action="usuario" method="POST">
 			<table
 				class="table table-hover table-condensed table-striped table-bordered">
 				<tr>
@@ -35,9 +35,7 @@
 						
 						<img src="${path}/resources/imgs/${restaurante3.logo}" height="200" width="250" class="img-thumbnail"/> 
 						<input type="radio"	name="restaurante" value="${restaurante3.selecionado}"> 
-					</td>
 					
-					<td align="center">
 						<img src="${path}/resources/imgs/${restaurante2.logo}" height="200" width="250" class="img-thumbnail">
 						<input type="radio"	name="restaurante" value="${restaurante2.selecionado}" />
 						

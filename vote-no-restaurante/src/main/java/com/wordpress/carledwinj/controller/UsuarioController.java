@@ -72,8 +72,14 @@ public class UsuarioController {
 		}else if (restaurante5.isSelecionado()){
 			usuario.setOutroRestaurante(restaurante5.getId());
 		}
-		usuario.setVotou(true);
 		usuario = usuarioRepository.save(usuario);
 		return new ModelAndView("cadastroUsuario", "command", usuario);
+	}
+	
+	@RequestMapping(value = "/finalizarVotacao", method = RequestMethod.POST)
+	public ModelAndView finalizar(@ModelAttribute("usuario") Usuario usuario, BindingResult result) {
+		usuario.setVotou(true);
+		usuario = usuarioRepository.save(usuario);
+		return new ModelAndView("ranking", "command", usuario);
 	}
 }
