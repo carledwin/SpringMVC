@@ -21,20 +21,35 @@
 </head>
 <body>
 	<section class="container">
+	<br />
 		<h1>Qual é o seu restaurante preferido?</h1>
-		<form:form action="" method="POST">
+		<br />
+		<br />
+		<form:form action="outros" method="POST">
 			<table
 				class="table table-hover table-condensed table-striped table-bordered">
 				<tr>
-					<td colspan="2" align="center">
-						<button type="submit" class="btn btn-primary">
-							Restaurante 1</button> <br /> <br />
-						<button type="submit" class="btn btn-primary">
-							Restaurante 2</button>
+					<td align="center">
+						<img src="${path}/resources/imgs/${restaurante1.logo}" height="200" width="250" class="img-thumbnail">
+						<input type="radio"	name="restaurante" value="${restaurante1.selecionado}" />
+						
+						<img src="${path}/resources/imgs/${restaurante4.logo}" height="200" width="250" class="img-thumbnail"/>
+						<input type="radio"	name="restaurante" value="${restaurante4.selecionado}"> 
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+					<br />
+					<button type="submit" class="btn btn-large btn-primary ">Votar</button>
 					</td>
 				</tr>
 			</table>
+			
+			
+			
 		</form:form>
+
+
 	</section>
 	<script type="text/javascript"
 		src="${path}/resources/js/jquery-2.1.4.min.js"></script>

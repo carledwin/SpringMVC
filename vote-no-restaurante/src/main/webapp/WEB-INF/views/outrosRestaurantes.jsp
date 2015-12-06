@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Outros Restaurantes</title>
+<title>Qual restaurante você mais gosta?</title>
 
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 
@@ -21,22 +21,44 @@
 </head>
 <body>
 	<section class="container">
-		<h1>Outros Restaurantes</h1>
-		<form:form action="score" method="POST">
+	<br />
+		<h1>Qual outro restaurante que você também gosta?</h1>
+		<br />
+		<br />
+		<form:form action="outros" method="POST">
 			<table
 				class="table table-hover table-condensed table-striped table-bordered">
 				<tr>
+					<td align="center">
+						<img src="${path}/resources/imgs/${restauranteNaoSelecionado.logo}" height="200" width="250" class="img-thumbnail">
+						<input type="radio"	name="restaurante" value="${restauranteNaoSelecionado.selecionado}" />
+						
+						<img src="${path}/resources/imgs/${restaurante3.logo}" height="200" width="250" class="img-thumbnail"/> 
+						<input type="radio"	name="restaurante" value="${restaurante3.selecionado}"> 
+					</td>
+					
+					<td align="center">
+						<img src="${path}/resources/imgs/${restaurante4.logo}" height="200" width="250" class="img-thumbnail">
+						<input type="radio"	name="restaurante" value="${restaurante4.selecionado}" />
+						
+						<img src="${path}/resources/imgs/${restaurante5.logo}" height="200" width="250" class="img-thumbnail"/> 
+						<input type="radio"	name="restaurante" value="${restaurante5.selecionado}"> 
+						
+					</td>
+				</tr>
+				<tr>
 					<td colspan="2" align="center">
-						<button type="submit" class="btn btn-primary">
-							Restaurante 3</button> <br /> <br />
-						<button type="submit" class="btn btn-primary">
-							Restaurante 4</button> <br /> <br />
-						<button type="submit" class="btn btn-primary">
-							Restaurante 5</button>
+					<br />
+					<button type="submit" class="btn btn-large btn-primary ">Votar</button>
 					</td>
 				</tr>
 			</table>
+			
+			
+			
 		</form:form>
+
+
 	</section>
 	<script type="text/javascript"
 		src="${path}/resources/js/jquery-2.1.4.min.js"></script>

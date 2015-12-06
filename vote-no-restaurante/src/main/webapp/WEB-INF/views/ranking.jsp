@@ -42,7 +42,7 @@
 				<tbody>
 					<c:forEach items="${todosRestaurantes}" var="restaurante">
 							<tr>
-								<td><img src="${path}/resources/imgs/${restaurante.logo}" height="50" width="100"/></td>
+								<td><img src="${path}/resources/imgs/${restaurante.logo}" height="50" width="100" class="img-circle"/></td>
 								<td>${restaurante.score}</td>
 							</tr>
 					</c:forEach>		

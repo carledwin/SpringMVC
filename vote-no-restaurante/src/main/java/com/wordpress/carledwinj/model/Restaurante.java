@@ -18,15 +18,18 @@ public class Restaurante {
 	private String nome;
 	private Long score;
 	private String logo;
+	
+	private boolean selecionado;
 
 	public Restaurante() {
 	}
 
-	public Restaurante(Long id, String nome, Long score, String logo) {
+	public Restaurante(Long id, String nome, Long score, String logo, boolean selecionado) {
 		this.id = id;
 		this.nome = nome;
 		this.score = score;
 		this.logo = logo;
+		this.selecionado = selecionado;
 	}
 
 	public Long getId() {
@@ -102,5 +105,13 @@ public class Restaurante {
 		} else if (!score.equals(other.score))
 			return false;
 		return true;
+	}
+
+	public boolean isSelecionado() {
+		return selecionado;
+	}
+
+	public void setSelecionado(boolean selecionado) {
+		this.selecionado = selecionado;
 	}
 }

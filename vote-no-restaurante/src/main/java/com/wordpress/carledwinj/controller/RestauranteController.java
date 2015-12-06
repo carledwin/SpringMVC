@@ -23,7 +23,16 @@ public class RestauranteController {
 	private RestauranteRepository restauranteRepository;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String restaurantePreferido() {
+	public String restaurantePreferido(Model model) {
+		Restaurante restaurante1 = new Restaurante();
+		Restaurante restaurante4 = new Restaurante();
+		
+		restaurante1 = restauranteRepository.findOne(1L);
+		restaurante4  = restauranteRepository.findOne(4L);
+		
+		model.addAttribute("restaurante1", restaurante1);
+		model.addAttribute("restaurante4", restaurante4);
+		
 		return "qualRestaurantePreferido";
 	}
 
@@ -48,11 +57,11 @@ public class RestauranteController {
 	
 	@RequestMapping("/insere")
 	public String inserirVarios(Model model) {
-		restauranteRepository.save(new Restaurante(1L, "McDonald's", 0L, "mc.png"));
-		restauranteRepository.save(new Restaurante(2L, "Subway", 0L, "sb.png"));
-		restauranteRepository.save(new Restaurante(3L, "Starbucks", 0L, "st.jpg"));
-		restauranteRepository.save(new Restaurante(4L, "Pizza Hut", 0L, "ph.png"));
-		restauranteRepository.save(new Restaurante(5L, "KFC", 0L, "kf.png"));
+		restauranteRepository.save(new Restaurante(1L, "McDonald's", 0L, "mc.png", false));
+		restauranteRepository.save(new Restaurante(2L, "Subway", 0L, "sb.png", false));
+		restauranteRepository.save(new Restaurante(3L, "Starbucks", 0L, "st.jpg", false));
+		restauranteRepository.save(new Restaurante(4L, "Pizza Hut", 0L, "ph.png", false));
+		restauranteRepository.save(new Restaurante(5L, "KFC", 0L, "kf.png", false));
 		Iterable<Restaurante> todosRestaurantes = restauranteRepository.findAll();
 		model.addAttribute("todosRestaurantes", todosRestaurantes);
 		model.addAttribute("titulo","Ranking");
