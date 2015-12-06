@@ -31,9 +31,10 @@
 				<td colspan="2" align="right"><input type="submit" value="Cadastrar" /></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center">
+				<td align="center">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-restaurante"> Abrir Modal</button>
 				</td>
+				<td><a href="total">Quantos Restaurantes Cadastrados</a></td>
 			</tr>
 		</table>
 		
