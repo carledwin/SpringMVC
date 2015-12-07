@@ -26,21 +26,15 @@ public class UsuarioController {
 	private RestauranteRepository restauranteRepository;
 	
 	@RequestMapping(value = "/outros", method = RequestMethod.POST)
-	public ModelAndView addUsuario(@ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restaurante1") Restaurante restaurante1,  @ModelAttribute("restaurante4") Restaurante restaurante4, BindingResult result, Model model) {
-		Restaurante restaurante2 = new Restaurante();
-		Restaurante restaurante3 = new Restaurante();
-		Restaurante restaurante5 = new Restaurante();
+	public String addUsuario(@ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restaurante") String restaurante, BindingResult result, Model model) {
 		
-		restaurante4 =  restauranteRepository.findOne(4L);//mock
-		restaurante4.setSelecionado(true);//mock
-		restaurante1 =  restauranteRepository.findOne(1L);//mock
-		restaurante1.setSelecionado(false);//mock
-		
-		restaurante2 = restauranteRepository.findOne(2L);
-		restaurante3 = restauranteRepository.findOne(3L);
-		restaurante5 = restauranteRepository.findOne(5L);
-		
-		if (restaurante1.isSelecionado()){
+		Restaurante restaurante1 = restauranteRepository.findOne(1L);
+		Restaurante restaurante2 = restauranteRepository.findOne(2L);
+		Restaurante restaurante3 = restauranteRepository.findOne(3L);
+		Restaurante restaurante4 = restauranteRepository.findOne(4L);
+		Restaurante restaurante5 = restauranteRepository.findOne(5L);
+
+		if (Long.parseLong(restaurante) == restaurante1.getId()){
 			usuario.setRestaurantePreferido(restaurante1.getId());
 			model.addAttribute("restauranteNaoSelecionado", restaurante4);
 			model.addAttribute("restaurante2", restaurante2);
@@ -48,29 +42,30 @@ public class UsuarioController {
 			model.addAttribute("restaurante5", restaurante5);
 		}else{
 			usuario.setRestaurantePreferido(restaurante4.getId());
-			model.addAttribute("restauranteNaoSelecionado", restaurante1);//mock
+			model.addAttribute("restauranteNaoSelecionado", restaurante1);
 			model.addAttribute("restaurante2", restaurante2);
 			model.addAttribute("restaurante3", restaurante3);
 			model.addAttribute("restaurante5", restaurante5);
+			model.addAttribute("usuario", usuario);
 		}
 		usuario = usuarioRepository.save(usuario);
 		
-		return new ModelAndView("outrosRestaurantes", "command", usuario);
+		return "outrosRestaurantes";
 	}
 
 	@RequestMapping(value = "/usuario", method = RequestMethod.POST)
-	public ModelAndView atualizar(@ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restauranteNaoSelecionado") Restaurante restauranteNaoSelecionado, @ModelAttribute("restaurante2") Restaurante restaurante2, @ModelAttribute("restaurante3") Restaurante restaurante3, @ModelAttribute("restaurante5") Restaurante restaurante5, BindingResult result) {
+	public ModelAndView atualizar(@ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restaurante") String restaurante, BindingResult result) {
 		
-		if (restauranteNaoSelecionado.isSelecionado()){
-			usuario.setOutroRestaurante(restauranteNaoSelecionado.getId());
-		}else if (restaurante2.isSelecionado()){
-			usuario.setRestaurantePreferido(restaurante2.getId());
-			
-		}else if (restaurante3.isSelecionado()){
-			usuario.setOutroRestaurante(restaurante3.getId());
-			
-		}else if (restaurante5.isSelecionado()){
-			usuario.setOutroRestaurante(restaurante5.getId());
+		if (Long.parseLong(restaurante) == 1L){
+			usuario.setOutroRestaurante(1L);
+		}else if (Long.parseLong(restaurante) == 2L){
+			usuario.setRestaurantePreferido(1L);
+		}else if (Long.parseLong(restaurante) == 3L){
+			usuario.setOutroRestaurante(3L);
+		}else if (Long.parseLong(restaurante) == 4L){
+			usuario.setOutroRestaurante(4L);
+		}else if (Long.parseLong(restaurante) ==5L){
+			usuario.setOutroRestaurante(5L);
 		}
 		usuario = usuarioRepository.save(usuario);
 		return new ModelAndView("cadastroUsuario", "command", usuario);

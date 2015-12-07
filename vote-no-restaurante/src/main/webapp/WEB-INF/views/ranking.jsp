@@ -20,12 +20,12 @@
 </head>
 <body>
 	<section class="container">
-		<h1>Restaurante Manager</h1>
+		<h1>${titulo}</h1>
 		
 		
 		<br />
 		<br />  	
-		<h3>Você, votou no restaurante   a nota 10.</h3>
+		<h3>${usuario.nome} , você votou nos restaurantes</h3>
 		
 		<br />
 		<br />

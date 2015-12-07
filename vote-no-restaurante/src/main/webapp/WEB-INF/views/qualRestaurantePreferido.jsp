@@ -31,10 +31,10 @@
 				<tr>
 					<td align="center">
 						<img src="${path}/resources/imgs/${restaurante1.logo}" height="200" width="250" class="img-thumbnail">
-						<input type="radio"	name="restaurante" value="${restaurante1.selecionado}" />
+						<input type="radio" id="rt1" name="restaurante" value="${restaurante1.id}" />
 						
 						<img src="${path}/resources/imgs/${restaurante4.logo}" height="200" width="250" class="img-thumbnail"/>
-						<input type="radio"	name="restaurante" value="${restaurante4.selecionado}"> 
+						<input type="radio"	id="rt4" name="restaurante" value="${restaurante4.id}"> 
 					</td>
 				</tr>
 				<tr>

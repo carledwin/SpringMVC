@@ -31,16 +31,16 @@
 				<tr>
 					<td align="center">
 						<img src="${path}/resources/imgs/${restauranteNaoSelecionado.logo}" height="200" width="250" class="img-thumbnail">
-						<input type="radio"	name="restaurante" value="${restauranteNaoSelecionado.selecionado}" />
+						<input type="radio" id="rtNS" name="restaurante" value="${restauranteNaoSelecionado.id}" />
+						
+						<img src="${path}/resources/imgs/${restaurante2.logo}" height="200" width="250" class="img-thumbnail">
+						<input type="radio"	id="rt2" name="restaurante" value="${restaurante2.id}" />
 						
 						<img src="${path}/resources/imgs/${restaurante3.logo}" height="200" width="250" class="img-thumbnail"/> 
-						<input type="radio"	name="restaurante" value="${restaurante3.selecionado}"> 
+						<input type="radio"	id="rt3" name="restaurante" value="${restaurante3.id}"> 
 					
-						<img src="${path}/resources/imgs/${restaurante2.logo}" height="200" width="250" class="img-thumbnail">
-						<input type="radio"	name="restaurante" value="${restaurante2.selecionado}" />
-						
 						<img src="${path}/resources/imgs/${restaurante5.logo}" height="200" width="250" class="img-thumbnail"/> 
-						<input type="radio"	name="restaurante" value="${restaurante5.selecionado}"> 
+						<input type="radio"	id="rt5" name="restaurante" value="${restaurante5.id}"> 
 						
 					</td>
 				</tr>
