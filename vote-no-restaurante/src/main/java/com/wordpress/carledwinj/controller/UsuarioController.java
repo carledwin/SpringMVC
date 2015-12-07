@@ -26,14 +26,17 @@ public class UsuarioController {
 	private RestauranteRepository restauranteRepository;
 	
 	@RequestMapping(value = "/outros", method = RequestMethod.POST)
-	public String addUsuario(@ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restaurante") String restaurante, BindingResult result, Model model) {
+	public ModelAndView addUsuario(@ModelAttribute("restaurante") String restaurante, BindingResult result, Model model) {
+		
+		Usuario usuario = new Usuario();
 		
 		Restaurante restaurante1 = restauranteRepository.findOne(1L);
 		Restaurante restaurante2 = restauranteRepository.findOne(2L);
 		Restaurante restaurante3 = restauranteRepository.findOne(3L);
 		Restaurante restaurante4 = restauranteRepository.findOne(4L);
 		Restaurante restaurante5 = restauranteRepository.findOne(5L);
-
+		
+		
 		if (Long.parseLong(restaurante) == restaurante1.getId()){
 			usuario.setRestaurantePreferido(restaurante1.getId());
 			model.addAttribute("restauranteNaoSelecionado", restaurante4);
@@ -46,15 +49,18 @@ public class UsuarioController {
 			model.addAttribute("restaurante2", restaurante2);
 			model.addAttribute("restaurante3", restaurante3);
 			model.addAttribute("restaurante5", restaurante5);
-			model.addAttribute("usuario", usuario);
 		}
 		usuario = usuarioRepository.save(usuario);
 		
-		return "outrosRestaurantes";
+		model.addAttribute("idUsuario", usuario.getId());
+		
+		return new ModelAndView("outrosRestaurantes", "command", usuario);
 	}
 
 	@RequestMapping(value = "/usuario", method = RequestMethod.POST)
-	public ModelAndView atualizar(@ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restaurante") String restaurante, BindingResult result) {
+	public String atualizar(@ModelAttribute("idUsuario") String idUsuario,  @ModelAttribute("usuario") Usuario usuario, @ModelAttribute("restaurante") String restaurante, BindingResult result, Model model) {
+		
+		Usuario usuario2 = usuarioRepository.findOne(Long.parseLong("idUsuario"));
 		
 		if (Long.parseLong(restaurante) == 1L){
 			usuario.setOutroRestaurante(1L);
@@ -68,7 +74,10 @@ public class UsuarioController {
 			usuario.setOutroRestaurante(5L);
 		}
 		usuario = usuarioRepository.save(usuario);
-		return new ModelAndView("cadastroUsuario", "command", usuario);
+		
+		model.addAttribute("idUsuario", usuario.getId());
+		
+		return "cadastroUsuario";
 	}
 	
 	@RequestMapping(value = "/finalizarVotacao", method = RequestMethod.POST)
