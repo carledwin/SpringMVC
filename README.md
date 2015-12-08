@@ -1,6 +1,6 @@
 # SpringMVC
 
-Tenologias utilizadas
+Tecnologias utilizadas:
 -Java1.8
 -Hibernate
 -Spring MVC
