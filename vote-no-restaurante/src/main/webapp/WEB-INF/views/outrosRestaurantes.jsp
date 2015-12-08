@@ -22,11 +22,12 @@
 <body>
 	<section class="container">
 	<br />
-		<h1>Qual outro restaurante que você também gosta?  </h1>
+		<h1>Qual outro restaurante que você também gosta? ${idUsuario} </h1>
 		<br />
 		<br />
-		<input type="hidden" value=" ${idUsuario}" name="idUsuario">
-		<form:form action="usuario" method="POST">
+		
+		<form:form action="usuario" method="POST" >
+		<input type="hidden" name="idUsuario" value="${idUsuario}"> 
 		
 			<table
 				class="table table-hover table-condensed table-striped table-bordered">

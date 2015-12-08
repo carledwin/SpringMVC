@@ -25,12 +25,8 @@
 	<div align="center">
 		<h1>Receba promoções e descontos do seu restaurante preferido.</h1>
 		<form:form action="finalizarVotacao" method="POST">
-		<input type="hidden" value=" ${idUsuario}" name="idUsuario">
+		<input type="hidden" value="${idUsuario}" name="idUsuario">
 			<table class="table table-hover table-condensed table-striped table-bordered" style="width: 500px">
-				<tr>
-					<td><form:label path="id">Email: </form:label></td>
-					<td><form:input path="id" class="form-control" /></td>
-				</tr>
 				<tr>
 					<td><form:label path="email">Email: </form:label></td>
 					<td><form:input path="email" class="form-control" /></td>
