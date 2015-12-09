@@ -51,14 +51,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 	private RestauranteService restauranteService;
 
 	@Override
-	public HashMap<String, Object> createUsuarioVotacao(String restaurante, Model model) {
+	public HashMap<String, Object> createUsuarioVotacao(String idRestaurante, Model model) {
 		Usuario usuario = new Usuario();
+		restauranteService.insertAllRestaurant();
 		Restaurante restaurante1 = restauranteRepository.findOne(FIRST_RESTAURANT);
 		Restaurante restaurante2 = restauranteRepository.findOne(SECOND_RESTAURANT);
 		Restaurante restaurante3 = restauranteRepository.findOne(THIRD_RESTAURANT);
 		Restaurante restaurante4 = restauranteRepository.findOne(FOURTH_RESTAURANT);
 		Restaurante restaurante5 = restauranteRepository.findOne(FIFTH_RESTAURANT);
-		if (Long.parseLong(restaurante) == restaurante1.getId()) {
+		if (Long.parseLong(idRestaurante) == restaurante1.getId()) {
 			usuario.setRestaurantePreferido(restaurante1.getId());
 			usuario.setPreferidoScore(SCORE_PREFERIDO);
 			restaurante1.setScore(restaurante1.getScore() + SCORE_PREFERIDO);
