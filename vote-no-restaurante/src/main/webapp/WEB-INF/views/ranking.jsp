@@ -20,11 +20,9 @@
 </head>
 <body>
 	<section class="container">
-		<h1>${titulo}</h1>
+		<h1 align="center">${titulo}</h1>
 		
 		
-		<br />
-		<br />
 		<form:form action="/vote-no-restaurante" method="GET">
 		
 			<table
@@ -39,7 +37,7 @@
 					<c:forEach items="${todosRestaurantes}" var="restaurante">
 							<tr>
 								<td style="text-align:center"><img src="${path}/resources/imgs/${restaurante.logo}" height="50" width="100" class="img-circle"/></td>
-								<td style="text-weight: bold; font-size: 40px; text-align:center">${restaurante.score}</td>
+								<td style="text-weight: bold; font-size: 30px; text-align:center">${restaurante.score}</td>
 							</tr>
 					</c:forEach>		
 				</tbody>
@@ -52,26 +50,25 @@
 			<button type="submit" class="btn btn-large btn-primary ">Inicio</button>
 		</form:form>
 		<br />
-		<br />  	
-
+		
 		<c:if test="${usuario != null}">
-		<h3>${usuario.nome} , você votou nos restaurantes abaixo:</h3>
+		<h3 align="center">${usuario.nome} , você votou nos restaurantes abaixo:</h3>
 				<table
 					class="table table-hover table-condensed table-striped table-bordered">
 					<thead>
 						<tr>
 							<td style="text-weight: bold; font-size: 20px; text-align:center">Restaurante Preferido</td>
-							<td style="text-weight: bold; font-size: 20px; text-align:center">SCore</td>
+							<td style="text-weight: bold; font-size: 20px; text-align:center">Score</td>
 							<td style="text-weight: bold; font-size: 20px; text-align:center">Outro Restaurante</td>
-							<td style="text-weight: bold; font-size: 20px; text-align:center">SCore</td>							
+							<td style="text-weight: bold; font-size: 20px; text-align:center">Score</td>							
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td style="text-align:center"><img src="${path}/resources/imgs/${restaurantePreferido.logo}" height="50" width="100" class="img-circle"/></td>
-							<td style="text-weight: bold; font-size: 40px; text-align:center">${usuario.preferidoScore}</td>
+							<td style="text-weight: bold; font-size: 30px; text-align:center">${usuario.preferidoScore}</td>
 							<td style="text-align:center"><img src="${path}/resources/imgs/${outroRestaurante.logo}" height="50" width="100" class="img-circle"/></td>
-							<td style="text-weight: bold; font-size: 40px; text-align:center">${usuario.outroScore}</td>
+							<td style="text-weight: bold; font-size: 30px; text-align:center">${usuario.outroScore}</td>
 						</tr>
 				</tbody>
 				</table>

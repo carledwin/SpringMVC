@@ -22,7 +22,7 @@
 <body>
 	<section class="container">
 	<br />
-		<h1>Qual é o seu restaurante preferido?</h1>
+		<h1>Qual restaurante você prefere?</h1>
 		<br />
 		<br />
 		<form:form action="outros" method="POST">
@@ -30,11 +30,11 @@
 				class="table table-hover table-condensed table-striped table-bordered">
 				<tr>
 					<td align="center">
-						<img src="${path}/resources/imgs/${restaurante1.logo}" height="200" width="250" class="img-thumbnail">
-						<input type="radio" id="rt1" name="restaurante" value="${restaurante1.id}" />
+						<img src="${path}/resources/imgs/${firstRestaurant.logo}" height="200" width="250" class="img-thumbnail">
+						<input type="radio" id="rt1" name="restaurante" value="${firstRestaurant.id}" />
 						
-						<img src="${path}/resources/imgs/${restaurante4.logo}" height="200" width="250" class="img-thumbnail"/>
-						<input type="radio"	id="rt4" name="restaurante" value="${restaurante4.id}"> 
+						<img src="${path}/resources/imgs/${secondRestaurant.logo}" height="200" width="250" class="img-thumbnail"/>
+						<input type="radio"	id="rt4" name="restaurante" value="${secondRestaurant.id}"> 
 					</td>
 				</tr>
 				<tr>
