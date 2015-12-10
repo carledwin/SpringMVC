@@ -22,27 +22,29 @@
 <body>
 
 	<section class="container">
-	<div align="center">
-		<h1>Receba promoções e descontos do seu restaurante preferido.</h1>
-		<form:form action="finalizarVotacao" method="POST">
-		<input type="hidden" value="${idUsuario}" name="idUsuario">
-			<table class="table table-hover table-condensed table-striped table-bordered" style="width: 500px">
-				<tr>
-					<td><form:label path="email">Email: </form:label></td>
-					<td><form:input path="email" class="form-control" /></td>
-				</tr>
-				<tr>
-					<td><form:label path="nome">Nome: </form:label></td>
-					<td><form:input path="nome" class="form-control" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center">
-						<button type="submit" class="btn btn-primary">Enviar</button>
-					</td>
-				</tr>
-			</table>
-		</form:form>
+		<br />
+		<div class="jumbotron" style="background-color: #FEFEFE; width:980px;">
+			<div class="container">
+				<h2 align="center">Receba promoções e descontos dos restaurantes escolhidos!</h2>
+				<form action="finalizarVotacao" method="POST" data-toggle="validator" role="form">
+					<div class="form-group">
+						<input type="hidden" value="${idUsuario}" name="idUsuario">
+						<label for="nome" class="control-label">Nome </label> 
+						<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" required style="width:500px;">
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="control-label">Email </label> <input
+							type="email" class="form-control" id="email" name="email" placeholder="Email válido" data-error="Bruh, that email address is invalid" required style="width:400px;">
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group" align="center">
+						<button type="submit" class="btn btn-primary">Cadastrar</button>
+					</div>
+				</form>
+			</div>
 		</div>
+
 	</section>
 	<script type="text/javascript"
 		src="${path}/resources/js/jquery-2.1.4.min.js"></script>

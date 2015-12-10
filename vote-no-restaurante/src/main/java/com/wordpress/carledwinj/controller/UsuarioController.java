@@ -23,7 +23,7 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 
 	@RequestMapping(value = "/outros", method = RequestMethod.POST)
-	public ModelAndView createUsuarioVotacao(@ModelAttribute("restaurante") String idRestaurante, Model model) {
+	public ModelAndView createUsuarioVotacao(@ModelAttribute("idRestaurante") String idRestaurante, Model model) {
 		HashMap<String, Object> map = usuarioService.createUsuarioVotacao(idRestaurante, model);
 		model = (Model) map.get("model");
 		ModelAndView mav = (ModelAndView) map.get("mav");
@@ -31,7 +31,7 @@ public class UsuarioController {
 	}
 
 	@RequestMapping(value = "/usuario", method = RequestMethod.POST)
-	public ModelAndView updateUsuarioVotacao(@ModelAttribute("idUsuario") String idStringUsuario, @ModelAttribute("restaurante") String idStringRestaurante, BindingResult result, Model model) {
+	public ModelAndView updateUsuarioVotacao(@ModelAttribute("idUsuario") String idStringUsuario, @ModelAttribute("idRestaurante") String idStringRestaurante, BindingResult result, Model model) {
 		HashMap<String, Object> map = usuarioService.updateUsuarioVotacao(idStringUsuario, idStringRestaurante, model);	
 		model = (Model) map.get("model");
 		ModelAndView mav = (ModelAndView) map.get("mav");
