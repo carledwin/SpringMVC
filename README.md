@@ -9,3 +9,5 @@ Tecnologias utilizadas:
 -jQuery
 -Bootstrap
 -JavaScript e CSS
+-dbUnit
+-jUnit
