@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<restaurante id="1" nome="McDonald's" score="0" logo="mc.png" selecionado="false" /> 
+	<restaurante id="2" nome="Subway" score="0" logo="sb.png" selecionado="false" />
+	<restaurante id="3" nome="Starbucks" score="0" logo="st.jpg" selecionado="false" />
+	<restaurante id="4" nome="Pizza Hut" score="0" logo="ph.png" selecionado="false" />
+	<restaurante id="5" nome="KFC" score="0" logo="kf.png" selecionado="false" />
+</dataset>

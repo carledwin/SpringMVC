@@ -86,8 +86,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return map;
 	}
 
-	public HashMap<String, Object> updateUsuarioVotacao(String idStringUsuario, String idStringRestaurante,
-			Model model) {
+	public HashMap<String, Object> updateUsuarioVotacao(String idStringUsuario, String idStringRestaurante,	Model model) {
 		Usuario usuario = usuarioRepository.findOne(Long.parseLong(idStringUsuario));
 		Long idRestaurante = Long.parseLong(idStringRestaurante);
 		if (idRestaurante == FIRST_RESTAURANT) {
